@@ -1,0 +1,186 @@
+/*Variables de uso general en el diseño*/ 
+:root{
+    --very-dark-blue-background: hsl(217, 54%, 11%);
+    --very-dark-blue-cardbg: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 30%, 42%);
+    --bright-blue-selected: #2bd3df;
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    background-color: var(--very-dark-blue-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width: 100vt;
+}
+
+/* Contenedor principal de la card */
+.card-main-container{
+    width: 350px;
+    height: 630px;
+    background-color: var(--very-dark-blue-cardbg);
+    border-radius: 15px;
+}
+
+
+/* Contenedor donde se ubica la imagen */
+.card-img-container{
+    width: 350px;
+    height: 330px;
+    padding: 20px;
+    position: relative;
+
+}
+
+/* Div que despliega efecto al pasar el cursor por encima de la imagen, no muestra si no se pasa el cursor por encima */
+.card-div-imgSelected{
+    opacity: 0;
+    background-color: var(--bright-blue-selected);
+    width: 310px;
+    height: 310px;
+    position: absolute;
+    border-radius: 15px;
+    z-index: 2;
+    transition: opacity ease-in-out .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* División que muestra el efecto, estilo que aplica al pasar el cursor por encima */
+.card-div-imgSelected:hover{
+    opacity: .5;
+}
+
+/* Imagen principal de la Card */
+.card-image{
+    width: 310px;
+    height: 310px;
+    position: absolute;
+    border-radius: 15px;
+    z-index:1;
+}
+
+/* División donde se encuentra el texto descripción de la Card */
+.card-data-text{
+    color: var(--white);
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    padding-bottom: 20px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--very-dark-blue-line);
+    border-bottom-width: 1px;
+}
+
+
+/* Título dentro de la descripción del Card */
+.card-data-text h3{
+    margin: 0;
+    font-weight: bolder;
+    transition:color ease-in-out .3s;
+}
+
+/* Efecto del título en la descripción del Card, aplicable al pasar el cursor por encima */
+.card-data-text h3:hover{
+    color: var(--bright-blue-selected);
+    cursor: pointer;
+}
+
+/* Descripción del NFT en la Card */
+.card-text-description{
+    margin-bottom: 30px;
+    color: var(--very-dark-blue-line);
+}
+
+/* División donde se encuentra lo relacionado al valor del NFT */
+.card-data-stockInfo{
+    display: flex;
+    font-weight: lighter;
+    justify-content: space-between;
+}
+
+.card-data-stockInfo div img{   
+    margin-right: 3px;
+
+}
+/* División donde se muestra el valor del NFT */
+.card-data-stockInfo-value{
+    display: inline-block;
+    font-size: medium;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: var(--bright-blue-selected);
+}
+
+/* Divisor donde se muestra el tiempo restante del valor del NFT */
+.card-data-stockInfo-timeRemaining{
+    display: inline-block;
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    color: var(--very-dark-blue-line);
+}
+
+/* Sección de la card con los datos del Creador del Diseño */
+.card-designer-data{
+    color: var(--white);
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Imagen Avatar del Creador del Diseño */
+.card-avatar-img{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    border-style:solid;
+    border-color:var(--white);
+    border-width: 2px;
+    border-radius: 100%;
+}
+
+/* Texto con detalles del Creador del Diseño */
+.card-designer-text{
+    display: inline;
+    margin-left: 10px;
+    font-weight: lighter;
+    font-size:medium;
+}
+
+/* Dentro de la descripción del Creador del Diseño, el enlace a su sitio */
+.card-designer-text a{
+    text-decoration: none;
+    font-weight: bold;
+    transition:color ease-in-out .3s;
+}
+
+/* Regla con un pesudoselector :is, que permite agrupar varias pseudoclases sobre un mismo elemento y que las reglas apliquen para ambos */
+.card-designer-text a:is(:link, :visited){
+    color: var(--white);
+}
+
+.card-designer-text a:hover{
+    color: var(--bright-blue-selected);
+    cursor: pointer;
+}
+
+.credits{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: white;
+    text-align: center;
+}
